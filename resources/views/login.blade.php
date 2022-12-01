@@ -55,7 +55,7 @@
 <body style="background-color: darkslategray3">
     <div class="s1 s2">
         <h1>BOMBAZER</h1>
-        <h3>ekip</h3>
+        <h3>Klub</h3>
         <form action="{{ route('login') }}" method="post">
             @csrf
             @include('eror')

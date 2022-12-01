@@ -39,7 +39,7 @@
             li{
                 padding: 5%;
             }
-            
+
         }
 
 </style>
@@ -59,7 +59,7 @@
         <li>Klublar</li>
     </a>
     <a href="{{ route('pay') }}">
-        <li>Premium istifadəçilər</li>
+        <li>Azer alişe</li>
     </a>
     <a href="{{ route('qayide') }}">
         <li>Qaydalar <kbd>< Rules ></kbd></li>
