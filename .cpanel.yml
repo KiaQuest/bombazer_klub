@@ -1,5 +1,8 @@
 ---
 deployment:
-  tasks:
-    - export DEPLOYPATH=/home/bombaze1/repositories/bombazer_klub
-    - /bin/cp -r * $DEPLOYPATH
+      tasks:
+        - export DEPLOYPATH=/home/bombaze1/public_html
+        - /bin/cp index.html $DEPLOYPATH
+        - /bin/cp style.css $DEPLOYPATH
+        - /bin cp * $DEPLOYPATH
+        - /bin cp /<sub_folder>/* $DEPLOYPATH
