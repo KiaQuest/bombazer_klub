@@ -72,7 +72,7 @@
             <p style="color: chocolate">{{ session('field') }}</p>
         @endif
 
-        <h5>version : 1.0.1</h5>
+        <h5>version : 1.0.2</h5>
     </div>
 </body>
 
