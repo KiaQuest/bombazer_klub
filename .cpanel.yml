@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/bombaze1/repositories/bombazer_klub/public_html #Add /<sub_folder> if required
+    - export DEPLOYPATH=/home/bombaze1/repositories/bombazer_klub
     - /bin/cp -r * $DEPLOYPATH
