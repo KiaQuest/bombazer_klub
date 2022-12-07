@@ -13,7 +13,7 @@ statistika<br><br><br><br>
 
 @php
     $a = $countGroup * $countClub;
-    $b = $a * 90;
+    $b = $a * 70;
     $c = $countUser * 300;
     $d = $c + $b;
 @endphp
@@ -22,8 +22,10 @@ statistika<br><br><br><br>
 Kategory sayı : {{ $countGroup }} <br>
 Klub sayı : {{ $countClub }} <br>
 <br><br><br><br>
-<div>Veb saytin giriş xərcinin formulu</div> = <div>[( Kategory sayı * Klub sayı ) * 90]</div> +
+<div>Veb saytin giriş xərcinin formulu</div> = <div>[( Kategory sayı * Klub sayı ) * 70]</div> +
     <div>( İstifadəçilərin sayı * 300)</div> = {{ $d }}
 <br><br><br>
 *ama felən bu verjendə giriş müftəde*
+<h5>version : 1.0.5</h5>
+<a href="{{ route('statUser') }}"><button>İstifadəçilər</button></a>
 @endsection

@@ -1,5 +1,15 @@
 @extends('tem')
 @section('section')
+    <script>
+        console.log('yaya');
+
+
+        setTimeout(() => {
+            window.scrollTo(0, document.body.scrollHeight);
+        }, 100);
+    </script>
+
+
     <style>
         .footer {
             position: fixed;
@@ -21,44 +31,76 @@
             margin-top: 1%;
             word-break: break-all;
         }
-        span{
+        span {
             right: 10px;
             position: absolute;
             font-size: xx-small;
             bottom: 15%;
         }
-        .main{
+        .main {
             padding: 8%
         }
-        h6{
+        h6 {
             text-align: left;
             margin-bottom: 0;
         }
 
         @media all and (max-width: 800px) {
             .box {
-            padding: 4%;
+                padding: 4%;
+            }
+
+            span {
+                bottom: 5%;
+            }
+
+            form {
+                display: flex;
+                justify-content: space-evenly;
+            }
         }
-        span{
-            bottom: 5%;
+        hr {
+            border: dashed 1px;
         }
+        textarea {
+            border-radius: 5px;
+        }
+        .main {
+            margin-bottom: 50px;
         }
     </style>
 
-
-   <h3>Forum « əncomən »</h3>
+    @php
+        $buyun = 0;
+    @endphp
+    <h3>Forum « əncomən »</h3>
     {{-- <h3>Hələ açılmiyip</h3> --}}
     <div class="main">
-        @foreach ($forum as $item)
-        @if ($loop->iteration > 7)
-@break
-        @endif
+        @foreach ($forum->reverse() as $item)
+            {{-- @if ($loop->iteration < $loop->count - 5)
+@continue
+        @endif --}}
+            {{-- {{ date('Y-m-d H:i:s') }}
+<br>
+{{ $item->created_at->format('Y-m-d') }} --}}
+
+            @if (date('Y-m-d') < $item->created_at and $buyun == 0)
+                @php
+                    $buyun = 'today';
+                @endphp
+                <div style="float:left; width: 34%;"> <hr /> </div> buyun <div style="float:right; width: 34%;"> <hr /> </div>
+                @php
+                    $buyun = 1;
+                @endphp
+            @endif
+
+
             <div @if ($item->user_id == session('userID')) style ="color : cornflowerblue" @endif>
-            <h6>{{ $item->nickname }}</h6>
-            <p class="box">{{ $item->text }} <span>{{ $item->created_at }}</span> </p></div>
+                <h6>{{ $item->nickname }}</h6>
+                <p class="box">{{ $item->text }} <span>{{ $item->created_at }}</span> </p>
+            </div>
         @endforeach
     </div>
-
 
 
     <div class="footer">

@@ -16,8 +16,8 @@ class Login extends Controller
             'name' => 'required|max:20',
             'password' => 'required|max:40',
         ], [
-            'name.required' => 'Ad boş ola bilməz',
-            'password.required' => 'Password boş ola bilməz',
+            'name.required' => 'Ad boş ola biləmməz',
+            'password.required' => 'Password boş ola biləmməz',
         ]);
 
         if (User::where('name', '=', $request->name)->where('password', '=', md5($request->password))->first()) {
@@ -27,7 +27,7 @@ class Login extends Controller
             session(['userID' => $userID, 'name' => $request->name, 'must_login' => 'yes']);
             return redirect('/anaSayfa');
         } else {
-            return redirect()->back()->with('field', 'ad və ya password səhvide');
+            return redirect()->back()->with('field', 'ad və ya password iştibahde');
         }
     }
 
@@ -45,7 +45,7 @@ class Login extends Controller
     public function signup(Request $request)
     {
         $this->validate(request(), [
-            'name' => 'required|max:20|min:3|unique:users',
+            'name' => 'required|regex:/^[a-zA-Z0-9@#%&*]+$/u|max:20|min:3|unique:users',
             'soyad' => 'max:40',
             'password' => 'required|max:40',
             'nickname' => 'required|max:40|unique:users',
@@ -53,13 +53,14 @@ class Login extends Controller
             'yas' => 'max:3',
 
         ], [
-            'name.required' => 'Ad boş ola bilməz',
-            'name.max' => 'Ad 20 karekterdən çox ola bilməz',
-            'name.min' => 'Ad 3 karekterdən az ola bilməz',
+            'name.required' => 'Ad boş ola biləmməz',
+            'name.regex' => 'Ad inglisi olsun',
+            'name.max' => 'Ad 20 karekterdən çox ola biləmməz',
+            'name.min' => 'Ad 3 karekterdən az ola biləmməz',
             'name.unique' => 'Ad artıq seçilib',
             'nickname.unique' => 'nickname artıq seçilib',
-            'nickname.required' => 'nickname boş ola bilməz',
-            'password.required' => 'Password boş ola bilməz',
+            'nickname.required' => 'nickname boş ola biləmməz',
+            'password.required' => 'Password boş ola biləmməz',
 
         ]);
         // dd(request()->all());

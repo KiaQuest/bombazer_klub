@@ -11,7 +11,7 @@ class Forum extends Controller
     public function show(){
 
         $forum = ForumModel::join('users', 'forum.user_id', '=', 'users.id')
-            ->select('forum.*', 'users.nickname')->orderBy('created_at', 'desc')
+            ->select('forum.*', 'users.nickname')->latest()->take(50)
             ->get();
 // dd($forum);
         return view('in.forum' , compact('forum'));
@@ -29,7 +29,7 @@ class Forum extends Controller
         // ->select('forum.text', 'forum.created_at','users.nickname')
         // ->get(['nickname' , 'forum.text' ,'created_at'])->toArray();
 
-     
+
         return redirect()->back();
     }
 }

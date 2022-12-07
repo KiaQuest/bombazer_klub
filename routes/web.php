@@ -25,6 +25,7 @@ Route::group(['namespace' => '\App\Http\Controllers'], function () {
     Route::get('/doOzv/{fee?}/{klub_id}/{league}',[\App\Http\Controllers\in\Profile::class,'doOzv'])->name('ozv');
     Route::get('/logout',[\App\Http\Controllers\Login::class,'flushSession'])->name('logout');
     Route::post('/forumSend',[\App\Http\Controllers\in\Forum::class,'do'])->name('forum2');
+    Route::get('/joined',[\App\Http\Controllers\in\Profile::class,'joined'])->name('joined');
     // Route::post('/home1',[\App\Http\Controllers\Total::class,'home'])->name('home');
 
 
@@ -35,6 +36,7 @@ Route::group(['namespace' => '\App\Http\Controllers'], function () {
 
     Route::get('/profile',[\App\Http\Controllers\in\Profile::class,'show'])->name('prof');
     Route::get('/stats',[\App\Http\Controllers\in\Statistics::class,'show'])->name('stats');
+    Route::get('/users',[\App\Http\Controllers\in\Statistics::class,'showUser'])->name('statUser');
     Route::get('/kateqoriyalar',[\App\Http\Controllers\in\Club::class,'show'])->name('kateqory');
 
 
