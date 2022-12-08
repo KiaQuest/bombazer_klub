@@ -1,6 +1,6 @@
 @extends('tem')
 @section('section')
-<h1>Kateqoriyalar</h1> <br><br><br>
+    <h1>Kateqoriyalar</h1> <br><br><br>
     {{-- @foreach ($gruplar as $grup)
         {{ $grup->groupTag }} ,
     @endforeach --}}
@@ -10,16 +10,38 @@
         a {
             display: contents
         }
-        .col-md-4{
+
+        .col-md-4 {
             margin: auto;
-width: unset;
-flex-basis: initial;
+            width: unset;
+            flex-basis: initial;
+        }
+        kbd{
+            float: inline-end;
         }
     </style>
 
-    
     <div class="container">
         <div class="row">
+
+            @foreach ($gruplar as $item)
+                <div class="col-md-4">
+                    <a href="{{ route('club', [$item->id]) }}">
+                        <div class="card @if ($item->id != 9 and $item->id != 10) {{ 'text-white' }} @endif mb-3"
+                            style="max-width: 18rem;background-color:{{ $item->color }}">
+                            <div class="card-header">{{ $item->groupTag }} <kbd>{{ $item->pop }}</kbd></div>
+                            <div class="card-body">
+                                <h5 class="card-title">Primary card title</h5>
+                                <p class="card-text">Some quick example text to build
+                                    on the card title and make up the bulk of the
+                                    card's content.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+
+            {{--
             <div class="col-md-4">
                 <a href="{{ route('club', [$gruplar[0]->id]) }}">
                     <div class="card text-white mb-3" style="max-width: 18rem;background-color:#28afc4">
@@ -201,7 +223,7 @@ flex-basis: initial;
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> --}}
 
         </div>
     </div>

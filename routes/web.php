@@ -22,10 +22,11 @@ Route::group(['namespace' => '\App\Http\Controllers'], function () {
     Route::get('/qayida',[\App\Http\Controllers\in\Rules::class,'show'])->name('qayide');
     Route::get('/forum',[\App\Http\Controllers\in\Forum::class,'show'])->name('forum');
     Route::get('/klubice/{id?}',[\App\Http\Controllers\in\Club::class,'clubin'])->name('clubin');
-    Route::get('/doOzv/{fee?}/{klub_id}/{league}',[\App\Http\Controllers\in\Profile::class,'doOzv'])->name('ozv');
+    Route::get('/doOzv/{fee?}/{klub_id}/{league}/{group}',[\App\Http\Controllers\in\Profile::class,'doOzv'])->name('ozv');
     Route::get('/logout',[\App\Http\Controllers\Login::class,'flushSession'])->name('logout');
     Route::post('/forumSend',[\App\Http\Controllers\in\Forum::class,'do'])->name('forum2');
     Route::get('/joined',[\App\Http\Controllers\in\Profile::class,'joined'])->name('joined');
+    Route::get('/kiarəş/{id?}',[\App\Http\Controllers\Kia::class,'base']);
     // Route::post('/home1',[\App\Http\Controllers\Total::class,'home'])->name('home');
 
 

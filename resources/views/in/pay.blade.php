@@ -22,7 +22,7 @@
         //     $client = new SoapClient('http://ippanel.com/class/sms/wsdlservice/server.php?wsdl');
         //     $user = '09362997891';
         //     $pass = 'Faraz@2740675747';
-        //     $fromNum = '';
+        //     $fromNum = '3000505';
         //     $toNum = ['09334020017'];
         //     $messageContent = 'بگ وگ';
         //     $op = 'send';
@@ -42,30 +42,31 @@
 
 
 
-        $client = new SoapClient("http://188.0.240.110/class/sms/wsdlservice/server.php?wsdl");
-        $user = "09362997891";
-        $pass = "Faraz@2740675747";
-        $fromNum = "+98100009";
-        $toNum = array("9362997891");
-        $pattern_code = "104";
-        $input_data = array(
-            "validation_code" => "12588",
-            "login_code" => "rewwwe14",
-            "tracking_code" => "qxq3ecv");
-        echo $client ->sendPatternSms($fromNum, $toNum, $user, $pass, $pattern_code, $input_data);
+        // $client = new SoapClient("http://188.0.240.110/class/sms/wsdlservice/server.php?wsdl");
+        // $user = "09362997891";
+        // $pass = "Faraz@2740675747";
+        // $fromNum = "+3000505";
+        // $toNum = array("09362997891");
+        // $pattern_code = "104";
+        // $input_data = array(
+        //     "validation_code" => "12588",
+        //     "login_code" => "rewwwe14",
+        //     "tracking_code" => "qxq3ecv");
+        // echo $client ->sendPatternSms($fromNum, $toNum, $user, $pass, $pattern_code, $input_data);
 
 
 
-
+//////////////////////////////////////////////////////////////// bude
         // $url = "https://ippanel.com/services.jspd";
 
-		// $rcpt_nm = array('9334020017');
+		// $rcpt_nm = array('09334020017');
 		// $param = array
 		// 			(
 		// 				'uname'=>'09362997891',
 		// 				'pass'=>'Faraz@2740675747',
-		// 				'from'=>'+98100009',
-		// 				'message'=>'تست',
+		// 				'from'=>'+5000125475',
+		// 				'message'=>'بمباذر کلوب ،
+        //                 کد تایید : 4456',
 		// 				'to'=>json_encode($rcpt_nm),
 		// 				'op'=>'send'
 		// 			);
@@ -83,6 +84,15 @@
 
 		// echo $res_data;
 
+
+//         $username = &quot;&quot;; $password = ''; $from = &quot;+98100009&quot;; $pattern_code = &quot;139&quot;; $to = array(&quot;9369400004&quot;); $input_data = array(&quot;tracking-code&quot; => &quot;1054 4-41&quot;, &quot;name&quot; => &quot;پنل&quot;);
+//         $url = &quot;https://ippanel.com/patterns/pattern?username=&quot; . $username . &quot;&password=&quot; . urlencode($password) . &quot;&from=$from&to=&quot; . json_encode($to) . &quot;&input_data=&quot; . urlencode(json_encode($input_data)) . &quot;&pattern_code=$pattern_code&quot;;
+//         $handler = curl_init($url);
+//         curl_setopt($handler, CURLOPT_CUSTOMREQUEST, &quot;POST&quot;);
+//         curl_setopt($handler, CURLOPT_POSTFIELDS, $input_data);
+//         curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
+//         $response = curl_exec($handler);
+// echo $response;
 
     @endphp
 

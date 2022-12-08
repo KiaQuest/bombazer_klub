@@ -46,7 +46,7 @@
 
 <div class="back"><a href="{{ route('logout') }}"><button class="kategoryButton">Çıxış </button></a></div>
 
-<h1>ana səhifəyə xoş gəlipsiz</h1>
+<h1>ana səfhəyə xoş gəlipsiz</h1>
 <div class="mid">
 <ul>
     <a href="{{ route('prof') }}">
@@ -66,6 +66,9 @@
     </a>
     <a href="{{ route('forum') }}">
         <li>Forum <kbd>< anjoman ></kbd></li>
+    </a>
+    <a href="{{ route('joined') }}">
+        <li>ozv olduğum</li>
     </a>
 </ul>
 </div>

@@ -5,17 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Grouping extends Model
+class Log extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
-    protected $table = 'grouping';
+    protected $guarded = [];
+    protected $table = 'logs';
 
     public $timestamps = false;
-
-    public function color()
-    {
-        return $this->hasMany(Clubs::class);
-    }
 }

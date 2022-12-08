@@ -88,7 +88,7 @@
                             <div><p><kbd>Coming Soon</kbd></p></div>
                             @endif
                             @if ( $X == 0 )
-                            <div class="ozv"><a href="{{ route('ozv', [$klub->fee , $klub->id, $klub->league]) }}">
+                            <div class="ozv"><a href="{{ route('ozv', [$klub->fee , $klub->id, $klub->league, $klub->group]) }}">
                                 <button class="button-33" role="button">Ozv ol - <span>({{ $klub->fee }} Azer)</span></button></a></div>
                             @elseif ($X == 1)
                             <div class="ozv"><kbd> ozv olupsan </kbd></div>

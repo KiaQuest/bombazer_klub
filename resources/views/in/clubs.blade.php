@@ -27,6 +27,9 @@
             border-top-left-radius: 25px;
             border-bottom-right-radius: 25px;
         }
+        kbd{
+            float: inline-end;
+        }
     </style>
     <div class="back"><a href="{{ route('kateqory') }}"><button class="kategoryButton">Kategoria</button></a></div>
     <h1>Klublar</h1><br><br><br>
@@ -39,7 +42,7 @@
                     <a href="{{ route('clubin', [$klub->id]) }}">
                         <div class="card @if ($klub->group != 9 and $klub->group != 10) {{ 'text-white' }} @endif mb-3"
                             style="max-width: 18rem;background-color:{{ $klub->color }}">
-                            <div class="card-header">{{ $klub->name }}</div>
+                            <div class="card-header">{{ $klub->name }} <kbd>{{ $klub->members }}</kbd></div>
                             <div class="card-body">
                                 <h5 class="card-title">Primary card title</h5>
                                 <p class="card-text">{{ $klub->des }}Some quick example text to build on the card title
@@ -58,7 +61,7 @@
                 <div class="col-md-4">
                     <a href="{{ route('clubin', [$g1->id]) }}">
                         <div class="card text-white mb-3" style="max-width: 18rem;background-color:{{ $mainColor }}">
-                            <div class="card-header">{{ $g1->name }}</div>
+                            <div class="card-header">{{ $g1->name }} <kbd>{{ $g1->members }}</div>
                             <div class="card-body">
                                 <h5 class="card-title">Secondary card title</h5>
                                 <p class="card-text">{{ $g1->des }}Some quick example text to build on the card title

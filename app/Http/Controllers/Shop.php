@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\paymentModel;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -68,6 +69,15 @@ class Shop extends Controller
                 'user_id' => session('userID'),
                 'amount' => $azer,
                 'track_code' => $trackingCode
+            ]);
+
+            Log::insert([
+                'user_id' => session('userID'),
+                'name' => session('name'),
+                'action' => 14,
+                'ip1' => request()->ip(),
+                'effect' => $azer,
+                'fee' => $price,
             ]);
 
             // تراکنش با موفقیت سمت بانک تایید گردید

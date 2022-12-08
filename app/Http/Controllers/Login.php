@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -25,6 +26,14 @@ class Login extends Controller
             $userID = User::where('name', $request->name)->value('id');
 
             session(['userID' => $userID, 'name' => $request->name, 'must_login' => 'yes']);
+
+            Log::insert([
+                'user_id' => session('userID'),
+                'name' => $request->name,
+                'action' => 10,
+                'ip1' => request()->ip(),
+            ]);
+
             return redirect('/anaSayfa');
         } else {
             return redirect()->back()->with('field', 'ad və ya password iştibahde');
